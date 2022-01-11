@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- {{msg}} -->
+        <!-- <button>alert</button> -->
+        <!-- <div v-if="show">展示</div>
+        <div v-else>不展示</div> -->
+        <!-- <div v-show="show">展示</div> -->
+        <!-- 循环一个数组 -->
+        <!-- <p v-for="(value,index) in arr">{{value}}--{{index}}</p> -->
+        <!-- 循环一个对象 -->
+        <!-- <p v-for="(value,key,index) in obj">{{value}}--{{key}}--{{index}}</p> -->
+
+        <!-- 循环一个对象数组 直接打印value是一个字符串返回界面-->
+        <!-- <p v-for="(value) in objArr">{{value}}</p>   -->
+
+        <!-- 循环一个对象数组，循环打印里面的name，age，sex属性-->
+        <!-- <p v-for="(value,index) in objArr">{{value.name}}--{{value.age}}--{{value.sex}}--{{index}}</p>   -->
+
+        <!-- v-on:click可以简写成'@click' -->
+        <!-- <button v-on:click="add()">+1</button>
+        <div>{{count}}</div> -->
+
+        <!-- v-bind:style 可以简写成 ':style'号 -->
+        <!-- <div style="width: 100px;height: 100px;border: 1px solid #000" :style="bgcolor"></div> -->
+
+        <!-- v-model -->
+        <input type="text" v-model="text">
+        <button @click="showText">print</button>
+
+    </div>
+
+    <!-- js包引入 -->
+    <script src="./vue.js"></script>
+
+    <script>
+        new Vue({
+            // 挂载元素
+            el:'#app',
+            // 数据
+            data:{
+                msg:'Hello World Vue!',
+                show:false,
+                arr:['asdadsa','12e232','sadfafa','sdfada'],
+                obj:{
+                    name:'zhangsan',
+                    age:'18',
+                    sex:'man',
+                },
+                objArr:[
+                {
+                    name:'lisi',
+                    age:'19',
+                    sex:'man',
+                },
+                {
+                    name:'wangwu',
+                    age:'20',
+                    sex:'man',
+                },
+                {
+                    name:'chenchao',
+                    age:'24',
+                    sex:'man',
+                }
+                ],
+                count:1,
+                bgcolor:{
+                    backgroundColor:'#ccc'
+                },
+                text:'chenchao'
+
+            },
+            // 方法
+            methods:{
+                add(){
+                    this.count++
+                },
+                showText(){
+                    console.log(this.text)
+
+                }
+            }
+        })
+
+    </script>
+</body>
+</html>
